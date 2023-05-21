@@ -1,0 +1,191 @@
+nav {
+    margin: -140px 0 0 0;
+    height: 80px;
+    max-height: 80px;
+    display: inline-flex;
+    position: fixed;
+    width: 100vw;
+    flex-wrap: wrap;
+    background-color: #081b28;
+    z-index: 10;
+}
+
+.nav-check {
+    display: none;
+}
+
+nav>ul {
+    display: inline-flex;
+    list-style-type: none;
+    gap: 2rem;
+
+}
+
+ul.nav-links {
+    margin: 0 5% 0 auto;
+    padding-block: 10px;
+}
+
+nav>ul>div>li {
+    display: inline-block;
+    align-self: center;
+    padding: 15px 30px 15px 30px;
+}
+
+nav>ul>div>li:hover {
+    border-bottom: 4px solid ghostwhite;
+    transition: border-bottom 0.3s ease;
+}
+
+nav>ul>div>li>a {
+    text-decoration: none;
+    color: ghostwhite;
+}
+
+a#logo {
+    font-size: 20pt;
+    font-weight: bold;
+    margin-left: 50px;
+    background: linear-gradient(to right, #549BFF, rgb(69, 214, 202), rgb(176, 6, 255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    align-self: center;
+
+}
+
+a#logo:hover {
+    background: linear-gradient(to right, rgb(176, 6, 255),  #78e6fa,  #549BFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 0.3s ease;
+
+}
+
+
+.nav-links>div>li>a {
+    padding: 20px;
+}
+
+
+@media (max-width: 1230px) {
+
+    nav {
+        min-width: 400px;
+        height: 80px;
+
+    }
+
+    nav>ul>div>li:hover{
+        border: none;
+    }
+
+    /*Animação Sanduiche */
+    .menu-toggle {
+        position: absolute;
+        right: 10px;
+        align-self: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        margin-right: 10px;
+        z-index: 2;
+    }
+
+    label>span {
+        width: 25px;
+        height: 3px;
+        display: block;
+        background-color: ghostwhite;
+        margin: 4px 0;
+        transition: transform 300ms, opacity 300ms;
+    }
+
+    .menu-toggle span:nth-child(1),
+    .menu-toggle span:nth-child(3) {
+        transform-origin: 0 50%;
+    }
+
+    #nav-check:checked~.menu-toggle span:nth-child(1) {
+        transform: rotate(35deg);
+    }
+
+    #nav-check:checked~.menu-toggle span:nth-child(3) {
+        transform: rotate(-35deg);
+    }
+
+    #nav-check:checked~.menu-toggle span:nth-child(2) {
+        opacity: 0;
+
+    }
+
+    /* Menu Aberto */
+
+    ul.nav-links {
+        background-color: #18171b9c;
+        width: 160px;
+        padding: 0;
+        margin-right: 0px;
+        box-shadow: -2px 0px 4px -1px rgb(20, 20, 20);
+        overflow: hidden;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        height: 100vh;
+        align-self: flex-start;
+        right: -160px;
+        padding: 0;
+        transition: transform 450ms ease-in-out;
+        transform: translateX(0px);
+    }
+
+    .nav-check:checked~.nav-links {
+        transform: translateX(-160px);
+    }
+
+    .nav-links>div {
+        margin-top: 20px;
+        padding: 0;
+        height: fit-content;
+    }
+
+    .nav-links>div>li {
+        padding: 0;
+        width: 160px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        transition: background-color 0.3s ease;
+        overflow: hidden;
+       
+    }
+
+    .nav-links>div>li>a {
+        padding: 10px;
+    }
+
+    .nav-links>div>li::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 120px;
+        width: 160px;
+        background-color: rgba(73, 231, 223, 0.842);
+        border-radius: 5px 0px 0px 5px;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: -1;
+    }
+
+    .nav-links>div>li:hover::before {
+        transform: translateX(0);
+    }
+
+
+    /* Estilize os spans brancos para se parecer com um ícone de menu sanduíche */
+}

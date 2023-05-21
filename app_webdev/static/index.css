@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-y: auto;
+    margin: 140px auto auto auto;
+    padding: 0;
+    min-width: 400px;
+    background-image: linear-gradient(#2b1055, #7597de);
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+
+
+body>h1 {
+    text-align: center;
+    margin: auto;
+    font-size: medium;
+    color: ghostwhite;
+}
+
+#content-body {
+    color: ghostwhite;
+    width: 80%;
+    background-color: rgba(248, 248, 255, 0);
+    margin: auto;
+    opacity: 0;
+    animation: translate-animation 2s ease forwards;
+    text-align: center;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 80vh;
+    margin: auto;
+}
+
+/*Remove a seleção*/
+#content-body {
+    user-select: none;
+    /* Padrão */
+    -webkit-user-select: none;
+    /* Navegadores baseados em WebKit */
+    -moz-user-select: none;
+    /* Navegadores baseados em Gecko */
+    -ms-user-select: none;
+    /* Para navegadores baseados no Internet Explorer */
+}
+
+/*@media screen para width > 1000px*/
+@media (min-width: 1200px) {
+    #content-body {
+        opacity: 0;
+        animation: translate-animation 2s ease forwards;
+    }
+
+    @keyframes translate-animation {
+        from {
+            opacity: 0;
+            transform: translate(-10%)
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0)
+        }
+    }
+
+}
+
+@media (max-width: 1199px) {
+    #content-body {
+        width: 90vw;
+        opacity: 0;
+        animation: fade-in 2s ease forwards;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+#header-formulario {
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes color-transition {
+    0% {
+        background-color: #ff0000;
+    }
+
+    12.5% {
+        background-color: #ff8000;
+    }
+
+    25% {
+        background-color: #ffff00;
+    }
+
+    37.5% {
+        background-color: #80ff00;
+    }
+
+    50% {
+        background-color: #00ff00;
+    }
+
+    62.5% {
+        background-color: #00ff80;
+    }
+
+    75% {
+        background-color: #00ffff;
+    }
+
+    87.5% {
+        background-color: #0080ff;
+    }
+
+    100% {
+        background-color: #ff0000;
+    }
+}
+
+#header-formulario {
+    animation: color-transition 8s infinite;
+}
