@@ -18,7 +18,6 @@ nav>ul {
     display: inline-flex;
     list-style-type: none;
     gap: 2rem;
-
 }
 
 ul.nav-links {

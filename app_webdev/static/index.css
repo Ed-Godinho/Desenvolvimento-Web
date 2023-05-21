@@ -39,6 +39,7 @@ section {
     align-content: center;
     min-height: 80vh;
     margin: auto;
+    scroll-snap-type: y mandatory;
 }
 
 /*Remove a seleção*/
@@ -91,7 +92,6 @@ section {
         }
     }
 }
-
 
 
 #header-formulario {
