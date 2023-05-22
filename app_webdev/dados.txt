@@ -1,0 +1,12 @@
+Nome: Edneython Campos Godinho
+Email: edcgodiho@gmail.com
+Hash: $pbkdf2-sha256$29000$WwsBAAAg5Nx7T2mNsda6tw$HZrByfaHzGiV3FyzVICiIN1WyZfVO2jrPvh/p6FU2q4
+
+Nome: Edneython Campos Godinho
+Email: eder.ufpi@outlook.com
+Hash: $pbkdf2-sha256$29000$sXbunROiFMI4R2jNOefcuw$Pot0QNJq6Y2N19PHLVyBekz/M.T1MBLFzkc2wcLI1Q8
+
+Nome: Edneython Campos Godinho
+Email: eder.ufpi@outlook.com
+Hash: $pbkdf2-sha256$29000$01orJURoDQEgpLS2FoLwfg$HpC3QRd1uSXnvp8HxVbQrlNEUfRdDOm4hXOklGm1svw
+

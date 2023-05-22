@@ -2,17 +2,21 @@
 <html lang="pt-br">
 
 <head>
+    <script src="../static/navigation.js"></script>
+    <script src="../static/index.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.9, user-scalable=no">
+    <script src="https://kit.fontawesome.com/abe562b248.js" crossorigin="anonymous"></script>
     <link rel="Stylesheet" href="../static/navigation.css">
     <link rel="Stylesheet" href="../static/index.css">
-    <script src="../static/navigation.js"></script>
+
     <title>Home Page</title>
 </head>
 <nav>
+    <!--Redireciona para o proprio IP-->
     <input type="checkbox" id="nav-check" class="nav-check">
-    <a href="" id="logo" draggable="false">Web Development</a>
+    <a href="http://192.168.1.147:5000" id="logo" draggable="false">Web Development</a>
     <label for="nav-check" class="menu-toggle">
         <span class="Bar-1"></span>
         <span class="Bar-2"></span>
@@ -25,33 +29,63 @@
             <li><a href="" draggable="false">Sobre</a></li>
             <li><a href="" draggable="false">Portfólio</a></li>
             <li><a href="" draggable="false">Contato</a></li>
+            <div class="container-signin">
+                <a href="" draggable="false">Login</a>
+                <a class="scrollForm" onclick="scrollToForm()">Sign Up</a>
+            </div>
         </div>
     </ul>
 </nav>
 
 <body>
-    <h1>API em funcionamento!</h1>
+    <header>
+    </header>
     <div id="content-body" class="container-home">
-
         <section>
             <h1>Curso Básico de Desenvolvimento Web</h1>
-            <p>Este é nosso website e aqui podemos colocar praticamente qualquer tipo de mídia</p>
+            <p class="animate-1"></p>
         </section>
 
-        <section>
+        <section class="sec2">
             <h1>Nosso Produto</h1>
             <p>Essa seção é destinada a propagando do produto, planeje modelos 3D talvez</p>
 
         </section>
 
         <section>
-            <h1>Confira Abaixo</h1>
-            <p>Add algum vídeo aqui</p>
+            <h1>Entre em contato</h1>
+            <button id="startAnimation" onclick="startTextAnimation()">Iniciar animação</button>
+            <p class="contact-me"></p>
+            <a><img class="hidden" src="../static/img/whatsapp.png" style="width: 100px; height:auto;" onclick="contactMe()"></a>
         </section>
 
         <section id="formulario_cadastro">
-            <h1>Olar, hoje estamos fazendo um curso básico de Web Design</h1>
-            <p>Este é nosso website</p>
+            <div class="formulario_cadastro" id="color-transition">
+                <h1>Formulário de Cadastro</h1>
+                <form action="http://192.168.1.147:5000/cadastrar" method="POST">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+
+                    <label for="senha">Escolha uma senha
+                        <div id="container-senha">
+                            <input type="password" id="senha" name="senha" placeholder="senha" required>
+                            <i class="fas fa-duotone fa-eye" onclick="togglePasswordVisibility()"
+                                style="--fa-primary-color: #0044b3; --fa-secondary-color: #f5f5f5;"></i>
+                        </div>
+                    </label>
+
+                    <label for="senha">Confirmar Senha:</label>
+                    <div id="container-confirma">
+                        <input type="password" name="senha" id="confirma-senha" placeholder="Confirme sua senha"
+                            required>
+                        <i class="fas fa-duotone fa-eye fas2" onclick="togglePasswordVisibility2()"
+                            style="--fa-primary-color: #0044b3; --fa-secondary-color: #f5f5f5;"></i>
+                    </div>
+                    <button type="submit" class="btn-cadastrar">Cadastrar</button>
+                </form>
+            </div>
         </section>
     </div>
 
@@ -60,12 +94,11 @@
         <img src="../static/img/up-arrow.png" width="50px" height="auto" draggable="false">
     </div>
 
-
     <div id="header-teste">
-        <div id="header-formulario">
-            
-        </div>
+
     </div>
+
+
 </body>
 
 </html>

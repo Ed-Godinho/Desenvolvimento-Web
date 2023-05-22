@@ -5,13 +5,39 @@ nav {
     display: inline-flex;
     position: fixed;
     width: 100vw;
-    flex-wrap: wrap;
     background-color: #081b28;
     z-index: 10;
 }
 
 .nav-check {
     display: none;
+}
+
+.container-signin {
+    width: fit-content;
+    display: inline-flex;
+    place-items: center;
+    gap: 2px;
+    gap: 1rem;
+}
+
+.container-signin a{
+    color: ghostwhite;
+    text-decoration: none;
+    background-color:#7364f7;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+}
+
+.scrollForm {
+    cursor: pointer;
+}
+
+.container-signin a:hover{
+    background-color: #3688F5;
+    transition: all 0.3s ease-in-out;
+    transform: translate(0, 3px);
+    scale: 1.05;
 }
 
 nav>ul {
@@ -21,7 +47,7 @@ nav>ul {
 }
 
 ul.nav-links {
-    margin: 0 5% 0 auto;
+    margin: 0 12% 0 auto;
     padding-block: 10px;
 }
 
@@ -41,7 +67,8 @@ nav>ul>div>li>a {
     color: ghostwhite;
 }
 
-a#logo {
+nav a#logo {
+    float: left;
     font-size: 20pt;
     font-weight: bold;
     margin-left: 50px;
@@ -68,7 +95,20 @@ a#logo:hover {
 }
 
 
-@media (max-width: 1230px) {
+@media (max-width: 1300px) {
+
+    .container-signin {
+        margin-top: 20px;
+        display: grid;
+        width: 150px;
+        place-items: center;
+        gap: 0.5rem;
+    }
+    .container-signin a {
+        background-color: #423B80;
+        width: 50%;
+        text-align: center;
+    }
 
     nav {
         min-width: 400px;
@@ -91,6 +131,7 @@ a#logo:hover {
         margin-right: 10px;
         z-index: 2;
     }
+
 
     label>span {
         width: 25px;
@@ -184,7 +225,6 @@ a#logo:hover {
     .nav-links>div>li:hover::before {
         transform: translateX(0);
     }
-
 
     /* Estilize os spans brancos para se parecer com um ícone de menu sanduíche */
 }

@@ -1,20 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
+:root {
+    --nuvens: fixed;
+}
+
 * {
     font-family: 'Poppins', sans-serif;
 }
 
 body {
     overflow-y: auto;
-    margin: 140px auto auto auto;
     padding: 0;
     min-width: 400px;
     background-image: linear-gradient(#2b1055, #7597de);
-    min-height: 100vh;
     scroll-behavior: smooth;
+    margin: 140px 0 0 0;
+    scroll-snap-type: y mandatory;
 }
-
-
 
 body>h1 {
     text-align: center;
@@ -22,6 +24,7 @@ body>h1 {
     font-size: medium;
     color: ghostwhite;
 }
+
 
 #content-body {
     color: ghostwhite;
@@ -31,15 +34,33 @@ body>h1 {
     opacity: 0;
     animation: translate-animation 2s ease forwards;
     text-align: center;
+
+    background: url('../static/img/clouds.png');
+    background-attachment: var(--nuvens);
+    background-size: fill;
+    background-position-x: 0px;
+    background-repeat: no-repeat;
+    background-position-y: 0px;
 }
 
 section {
     display: grid;
     place-items: center;
     align-content: center;
-    min-height: 80vh;
+    min-height: 100vh;
     margin: auto;
     scroll-snap-type: y mandatory;
+}
+
+.sec2 {
+    background-image: url('../static/img/bg-art.jpg');
+    background-clip: text;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 50px;
+    z-index: 99;
 }
 
 /*Remove a seleção*/
@@ -54,8 +75,10 @@ section {
     /* Para navegadores baseados no Internet Explorer */
 }
 
+
+
 /*@media screen para width > 1000px*/
-@media (min-width: 1200px) {
+@media (min-width: 1300px) {
     #content-body {
         opacity: 0;
         animation: translate-animation 2s ease forwards;
@@ -75,11 +98,23 @@ section {
 
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1299px) {
     #content-body {
-        width: 90vw;
+        width: 90%;
         opacity: 0;
         animation: fade-in 2s ease forwards;
+        background-size: contain;
+        background-position-y: 180px;
+        background-position-x: 50px;
+    }
+
+    nav a#logo {
+        font-size: 14pt;
+        margin-left: 10px;
+    }
+
+    .sec2 {
+        background-size: cover;
     }
 
     @keyframes fade-in {
@@ -93,50 +128,271 @@ section {
     }
 }
 
-
 #header-formulario {
     height: 50px;
     width: 50px;
 }
 
+.formulario_cadastro {
+    display: grid;
+    place-items: center;
+    animation: color-transition 5s ease-in-out infinite;
+    padding: 1% 2% 2% 2%;
+    width: 20rem;
+    border-radius: 10px;
+}
+
+.formulario_cadastro h1 {
+    color: #00546e;
+    font-weight: bolder;
+}
+
+.formulario_cadastro>form {
+    align-items: flex-start;
+    background-color: #423b80d7;
+    border-radius: 10px;
+    padding: 2rem 3rem 10rem 3rem;
+    display: grid;
+    padding: 2%;
+    width: 100%;
+    gap: 1rem;
+}
+
+form>input {
+    width: 90%;
+    place-self: center;
+    height: 30px;
+}
+
+input[name=senha] {
+    width: 260px;
+    margin-right: 5px;
+    place-self: start;
+    height: 30px;
+}
+
+.fa-eye,
+.fa-eye-slash {
+    cursor: pointer;
+}
+
+.btn-cadastrar {
+    /* Estilos de formatação */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #423b80;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 10rem;
+    place-self: center;
+    border-radius: 5px;
+
+    /* Alinhamento do texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-cadastrar:hover {
+    background-color: #007bff;
+    transition: 0.3s ease-in-out;
+}
+
 @keyframes color-transition {
     0% {
-        background-color: #ff0000;
+        background-color: #ff00f2;
+        /* Vermelho */
     }
 
-    12.5% {
-        background-color: #ff8000;
+    5% {
+        background-color: #ff9900;
+        /* Laranja escuro */
+    }
+
+    10% {
+        background-color: #ff6000;
+        /* Laranja */
+    }
+
+    15.625% {
+        background-color: #ffa000;
+        /* Laranja claro */
+    }
+
+    18.75% {
+        background-color: #ffc000;
+        /* Laranja claro */
+    }
+
+    21.875% {
+        background-color: #ffe000;
+        /* Amarelo escuro */
     }
 
     25% {
         background-color: #ffff00;
+        /* Amarelo */
+    }
+
+    28.125% {
+        background-color: #e0ff00;
+        /* Amarelo claro */
+    }
+
+    31.25% {
+        background-color: #c0ff00;
+        /* Amarelo claro */
+    }
+
+    34.375% {
+        background-color: #a0ff00;
+        /* Verde amarelado */
     }
 
     37.5% {
         background-color: #80ff00;
+        /* Verde claro */
+    }
+
+    40.625% {
+        background-color: #60ff00;
+        /* Verde claro */
+    }
+
+    43.75% {
+        background-color: #40ff00;
+        /* Verde claro */
+    }
+
+    46.875% {
+        background-color: #20ff00;
+        /* Verde claro */
     }
 
     50% {
         background-color: #00ff00;
+        /* Verde */
+    }
+
+    53.125% {
+        background-color: #00ff20;
+        /* Verde claro */
+    }
+
+    56.25% {
+        background-color: #00ff40;
+        /* Verde claro */
+    }
+
+    59.375% {
+        background-color: #00ff60;
+        /* Verde claro */
     }
 
     62.5% {
         background-color: #00ff80;
+        /* Verde claro */
+    }
+
+    65.625% {
+        background-color: #00ffa0;
+        /* Verde claro */
+    }
+
+    68.75% {
+        background-color: #00ffc0;
+        /* Verde claro */
+    }
+
+    71.875% {
+        background-color: #00ffe0;
+        /* Ciano amarelado */
     }
 
     75% {
         background-color: #00ffff;
+        /* Ciano */
+    }
+
+    78.125% {
+        background-color: #00e0ff;
+        /* Ciano claro */
+    }
+
+    81.25% {
+        background-color: #00c0ff;
+        /* Ciano claro */
+    }
+
+    84.375% {
+        background-color: #00a0ff;
+        /* Azul esverdeado */
     }
 
     87.5% {
         background-color: #0080ff;
+        /* Azul claro */
+    }
+
+    90.625% {
+        background-color: #0060ff;
+        /* Azul claro */
+    }
+
+    93.75% {
+        background-color: #0040ff;
+        /* Azul claro */
+    }
+
+    96.875% {
+        background-color: #8c00ff;
+        /* Azul escuro */
     }
 
     100% {
-        background-color: #ff0000;
+        background-color: #c300ff;
+        /* Azul */
     }
 }
 
-#header-formulario {
-    animation: color-transition 8s infinite;
+/* Animação de texto e aparecimento do ícone do WhatsApp */
+.hidden {
+    opacity: 0;
+}
+
+.visible {
+    opacity: 1;
+    transition: 1s ease;
+}
+
+
+
+.animate-1 {
+    white-space: pre-line;
+}
+
+p.animate-1 {
+    text-align: justify;
+    display: inline;
+    font-size: 14pt;
+}
+
+.blinking-bar {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
