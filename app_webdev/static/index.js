@@ -58,33 +58,33 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //event de load
-window.addEventListener('load', function() {
-  function animationSection1() {
-    const textElement = document.querySelector('.animate-1');
-    const originalText = 'Este é nosso WebSite e atualmente conseguimos colocar quase qualquer mídia com facilidade! \n Todo este conteúdo é servido por um backend construído em Python com FastAPI mas existem muitos outros serviços que podem ser utilizados. Como por exemplo o Django e Flask.';
+window.addEventListener('load', function () {
+    function animationSection1() {
+        const textElement = document.querySelector('.animate-1');
+        const originalText = 'Este é nosso WebSite! \n Todo este conteúdo é servido por um backend construído em Python com FastAPI. No front-end foi utilizado apenas HTML5, CSS e JavaScript!';
 
-    let index = 0;
-    let intervalId;
+        let index = 0;
+        let intervalId;
 
-    function startTextAnimation() {
-      textElement.innerHTML = '';
-      index = 0;
-      intervalId = setInterval(() => {
-        if (index >= originalText.length) {
-          clearInterval(intervalId);
-          return;
+        function startTextAnimation() {
+            textElement.innerHTML = '';
+            index = 0;
+            intervalId = setInterval(() => {
+                if (index >= originalText.length) {
+                    clearInterval(intervalId);
+                    return;
+                }
+                const currentText = originalText.substr(0, index + 1);
+                textElement.innerHTML = currentText;
+                index++;
+            }, 40);
         }
-        const currentText = originalText.substr(0, index + 1);
-        textElement.innerHTML = currentText;
-        index++;
-      }, 40);
+
+        startTextAnimation();
+
     }
 
-    startTextAnimation();
-    
-  }
-
-  setTimeout(animationSection1, 1600);
+    setTimeout(animationSection1, 1600);
 });
 
 
@@ -129,4 +129,36 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+function contactMe() {
+    //envia uma mensagem para o meu whatsapp com uma mensagem padrão.
+    //coleta o momento atual do dia (bom dia, boa tarde, boa noite)
+    const data = new Date();
+    const hora = data.getHours();
+    let momento = '';
 
+    /*if (hora >= 0 && hora < 12) {
+        momento = 'Bom dia';
+    } else if (hora >= 12 && hora < 18) {
+        momento = 'Boa tarde';
+    } else {
+        momento = 'Boa noite';
+    }*/
+
+    switch (true) {
+        case (hora >= 0 && hora < 12):
+            momento = 'Bom dia';
+            break;
+        case (hora >= 12 && hora < 18):
+            momento = 'Boa tarde';
+            break;
+        case (hora >= 18 && hora < 24):
+            momento = 'Boa noite';
+            break;
+        default:
+            momento = 'Saudações';
+            break;
+    }
+
+    const mensagem = `${momento}, gostaria de entrar em contato com você para saber mais sobre o curso!`;
+    window.open(`https://api.whatsapp.com/send?phone=5586995687211&text=${mensagem}.`, '_blank');
+}

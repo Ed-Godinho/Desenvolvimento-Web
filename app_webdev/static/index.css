@@ -9,7 +9,7 @@
 }
 
 body {
-    overflow-y: auto;
+    overflow: overlay;
     padding: 0;
     min-width: 400px;
     background-image: linear-gradient(#2b1055, #7597de);
@@ -34,13 +34,12 @@ body>h1 {
     opacity: 0;
     animation: translate-animation 2s ease forwards;
     text-align: center;
-
     background: url('../static/img/clouds.png');
     background-attachment: var(--nuvens);
     background-size: fill;
-    background-position-x: 0px;
+    background-position-x: -20px;
     background-repeat: no-repeat;
-    background-position-y: 0px;
+    background-position-y: -50px;
 }
 
 section {
@@ -59,12 +58,13 @@ section {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-clip: border-box;
     border-radius: 50px;
     z-index: 99;
 }
 
 /*Remove a seleção*/
-#content-body {
+#content-body, a {
     user-select: none;
     /* Padrão */
     -webkit-user-select: none;
@@ -113,9 +113,7 @@ section {
         margin-left: 10px;
     }
 
-    .sec2 {
-        background-size: cover;
-    }
+
 
     @keyframes fade-in {
         from {
@@ -126,6 +124,17 @@ section {
             opacity: 1;
         }
     }
+
+    .animate-1 {
+        white-space: pre-line;
+        min-width: 90%;
+        background-color: rgba(22, 22, 22, 0.137);
+    }
+
+}
+
+.contactWhats{
+    cursor: pointer;
 }
 
 #header-formulario {
@@ -369,6 +378,11 @@ input[name=senha] {
 
 .animate-1 {
     white-space: pre-line;
+    min-height: 105px;
+    max-width: 50vw;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(22, 22, 22, 0.247);
 }
 
 p.animate-1 {
@@ -394,3 +408,37 @@ p.animate-1 {
         opacity: 0;
     }
 }
+
+/* Scrollbar */
+/* Estilizando a barra de rolagem */
+::-webkit-scrollbar {
+    width: 10px; /* Largura da barra de rolagem */
+    background-color: transparent; /* Cor de fundo transparente */
+    
+  }
+  
+  /* Estilizando o thumb (a alça da barra de rolagem) */
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 212, 212, 0.644); /* Cor do thumb */
+    border-radius: 5px; /* Borda arredondada */
+    
+  }
+  
+  /* Estilizando o thumb quando hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(209, 22, 247, 0.979); /* Cor do thumb */
+    /* Cor do thumb quando hover */
+  }
+  
+  /* Estilizando a barra de rolagem do track (a área ao redor do thumb) */
+  ::-webkit-scrollbar-track {
+    background-color: rgba(255, 0, 0, 0); /* Cor de fundo transparente */
+  }
+  
+  /* Estilizando o track quando hover */
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0); /* Cor do track quando hover */
+  }
+
+
+  

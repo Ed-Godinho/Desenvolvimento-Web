@@ -10,3 +10,11 @@ Nome: Edneython Campos Godinho
 Email: eder.ufpi@outlook.com
 Hash: $pbkdf2-sha256$29000$01orJURoDQEgpLS2FoLwfg$HpC3QRd1uSXnvp8HxVbQrlNEUfRdDOm4hXOklGm1svw
 
+Nome: Rafael Coutinho
+Email: eder@gmail.com
+Hash: $pbkdf2-sha256$29000$JKR0rhVi7P1fa.2dk5JSig$rPNUPZomg5/AlJikUytXUXW1ei0ICSAoJ/2uoyFpSiE
+
+Nome: Edneython Campos Godinho
+Email: eder.ufpi@outlook.com
+Hash: $pbkdf2-sha256$29000$ISRE6N3b25uTstZ6T0lJaQ$UvLtOIfUefWbIFr6O6lW7YTssgJ/35um1MIJ79wpAWA
+
